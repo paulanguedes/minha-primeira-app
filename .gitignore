@@ -1,0 +1,5 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/src/MinhaAppFuncional/bin/Debug/net7.0/Microsoft.Bcl.AsyncInterfaces.dll
