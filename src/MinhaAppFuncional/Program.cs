@@ -14,8 +14,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Adicionando filtro de erro do DB
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+// Adicionando Identity
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+// Adicionando a controller e views
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
