@@ -17,7 +17,11 @@ namespace MinhaAppFuncional.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Aluno.ToListAsync());
+            ViewBag.Sucesso = "Listagem bem sucedida!";
+
+            return _context.Aluno != null ?
+                View(await _context.Aluno.ToListAsync()) :
+                Problem("Entidade está nula.");
         }
 
         [Route("detalhes/{id:int}")]
@@ -102,6 +106,9 @@ namespace MinhaAppFuncional.Controllers
                         throw;
                     }
                 }
+
+                TempData["Sucesso"] = "Aluno editado com sucesso";
+
                 return RedirectToAction(nameof(Index));
             }
             return View(aluno);
